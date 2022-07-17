@@ -6,10 +6,6 @@ import { LoginComponent } from './login/login.component';
 // import { NotFoundComponent } from './not-found/not-found.component';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
-import { AnimationsComponent } from './utilities/animations/animations.component';
-import { BordersComponent } from './utilities/borders/borders.component';
-import { ColorsComponent } from './utilities/colors/colors.component';
-import { OtherComponent } from './utilities/other/other.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,13 +17,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent, title: 'SB Admin 2 - Dashboard' },
       { path: 'page1', component: Page1Component, title: 'SB Admin 2 - Page 1' },
       { path: 'page2', component: Page2Component, title: 'SB Admin 2 - Page 2' },
-      { path: 'utilities',
-        children:[
-          { path: 'colors/:type', component: ColorsComponent, title: 'SB Admin 2 - Colors' ,data: { key: 'value' } },
-          { path: 'borders', component: BordersComponent, title: 'SB Admin 2 - Borders' },
-          { path: 'animations', component: AnimationsComponent, title: 'SB Admin 2 - Animations' },
-          { path: 'other', component: OtherComponent, title: 'SB Admin 2 - Other' },
-        ] },
+      { path: 'utilities', loadChildren: () => import('./utilities/utilities.module').then(m => m.UtilitiesModule) },
     ]
   },
   // { path: '**', component: NotFoundComponent },
