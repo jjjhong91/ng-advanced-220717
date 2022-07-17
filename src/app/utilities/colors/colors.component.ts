@@ -29,4 +29,12 @@ export class ColorsComponent implements OnInit {
     });
   }
 
+  plus(num: number) {
+    this.router.navigate(['/utilities/colors', (+(this.type || 0)) + num], {
+      queryParamsHandling: 'preserve',
+      relativeTo: this.route,
+    });
+
+  }
+
 }
