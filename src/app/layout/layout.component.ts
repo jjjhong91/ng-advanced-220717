@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   templateUrl: './layout.component.html',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

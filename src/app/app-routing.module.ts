@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: 'page2', component: Page2Component, title: 'SB Admin 2 - Page 2' },
       { path: 'utilities',
         children:[
-          { path: 'colors', component: ColorsComponent, title: 'SB Admin 2 - Colors' },
+          { path: 'colors/:type', component: ColorsComponent, title: 'SB Admin 2 - Colors' },
           { path: 'borders', component: BordersComponent, title: 'SB Admin 2 - Borders' },
           { path: 'animations', component: AnimationsComponent, title: 'SB Admin 2 - Animations' },
           { path: 'other', component: OtherComponent, title: 'SB Admin 2 - Other' },
