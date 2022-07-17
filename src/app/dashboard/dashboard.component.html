@@ -1,18 +1,19 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-  <a
-    href="#"
-    class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-    ><i class="fas fa-download fa-sm text-white-50"></i> Generate
-    Report</a
+  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+    ><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a
   >
 </div>
 
 <!-- Content Row -->
 <div class="row">
   <!-- Earnings (Monthly) Card Example -->
-  <div class="col-xl-3 col-md-6 mb-4">
+  <div
+    class="col-xl-3 col-md-6 mb-4"
+    routerLink="/utilities/colors/111"
+    [queryParams]="{ name: 'May' }"
+  >
     <div class="card border-left-primary shadow h-100 py-2">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
@@ -22,9 +23,7 @@
             >
               Earnings (Monthly)
             </div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">
-              $40,000
-            </div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
           </div>
           <div class="col-auto">
             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -35,7 +34,11 @@
   </div>
 
   <!-- Earnings (Monthly) Card Example -->
-  <div class="col-xl-3 col-md-6 mb-4">
+  <div
+    class="col-xl-3 col-md-6 mb-4"
+    [routerLink]="['/utilities/colors', init_type]"
+    [queryParams]="{ name: 'John' }"
+  >
     <div class="card border-left-success shadow h-100 py-2">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
@@ -45,9 +48,7 @@
             >
               Earnings (Annual)
             </div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">
-              $215,000
-            </div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
           </div>
           <div class="col-auto">
             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -58,21 +59,17 @@
   </div>
 
   <!-- Earnings (Monthly) Card Example -->
-  <div class="col-xl-3 col-md-6 mb-4">
+  <div class="col-xl-3 col-md-6 mb-4" (click)="[gotoColors(333, 'Amy')]">
     <div class="card border-left-info shadow h-100 py-2">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
-            <div
-              class="text-xs font-weight-bold text-info text-uppercase mb-1"
-            >
+            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
               Tasks
             </div>
             <div class="row no-gutters align-items-center">
               <div class="col-auto">
-                <div
-                  class="h5 mb-0 mr-3 font-weight-bold text-gray-800"
-                >
+                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
                   50%
                 </div>
               </div>
@@ -99,7 +96,7 @@
   </div>
 
   <!-- Pending Requests Card Example -->
-  <div class="col-xl-3 col-md-6 mb-4">
+  <div class="col-xl-3 col-md-6 mb-4" (click)="[gotoColors2(444, 'Tom')]">
     <div class="card border-left-warning shadow h-100 py-2">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
@@ -130,9 +127,7 @@
       <div
         class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
       >
-        <h6 class="m-0 font-weight-bold text-primary">
-          Earnings Overview
-        </h6>
+        <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
         <div class="dropdown no-arrow">
           <a
             class="dropdown-toggle"
@@ -173,9 +168,7 @@
       <div
         class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
       >
-        <h6 class="m-0 font-weight-bold text-primary">
-          Revenue Sources
-        </h6>
+        <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
         <div class="dropdown no-arrow">
           <a
             class="dropdown-toggle"
@@ -362,18 +355,16 @@
         <div class="text-center">
           <img
             class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-            style="width: 25rem;"
+            style="width: 25rem"
             src="assets/img/undraw_posting_photo.svg"
             alt=""
           />
         </div>
         <p>
-          Add some quality, svg illustrations to your project courtesy
-          of
-          <a target="_blank" rel="nofollow" href="https://undraw.co/"
-            >unDraw</a
-          >, a constantly updated collection of beautiful svg images
-          that you can use completely free and without attribution!
+          Add some quality, svg illustrations to your project courtesy of
+          <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a
+          >, a constantly updated collection of beautiful svg images that you
+          can use completely free and without attribution!
         </p>
         <a target="_blank" rel="nofollow" href="https://undraw.co/"
           >Browse Illustrations on unDraw &rarr;</a
@@ -384,20 +375,17 @@
     <!-- Approach -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">
-          Development Approach
-        </h6>
+        <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
       </div>
       <div class="card-body">
         <p>
-          SB Admin 2 makes extensive use of Bootstrap 4 utility classes
-          in order to reduce CSS bloat and poor page performance. Custom
-          CSS classes are used to create custom components and custom
-          utility classes.
+          SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order
+          to reduce CSS bloat and poor page performance. Custom CSS classes are
+          used to create custom components and custom utility classes.
         </p>
         <p class="mb-0">
-          Before working with this theme, you should become familiar
-          with the Bootstrap framework, especially the utility classes.
+          Before working with this theme, you should become familiar with the
+          Bootstrap framework, especially the utility classes.
         </p>
       </div>
     </div>

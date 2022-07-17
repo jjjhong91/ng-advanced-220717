@@ -9,6 +9,7 @@ export class ColorsComponent implements OnInit {
 
   type: string | null = '';
   name: string | null = '';
+  data:any = {};
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -21,6 +22,11 @@ export class ColorsComponent implements OnInit {
 
     this.route.queryParamMap.subscribe(params => {
       this.name = params.get('name');
+    });
+
+    this.route.data.subscribe(data => {
+      let key = data['key'];
+      this.data = data;
     });
   }
 

@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'utilities',
         children:[
           { path: 'colors/:type', component: ColorsComponent, title: 'SB Admin 2 - Colors' },
+          { path: 'colors/:type', component: ColorsComponent, data: { key: 'value' } },
           { path: 'borders', component: BordersComponent, title: 'SB Admin 2 - Borders' },
           { path: 'animations', component: AnimationsComponent, title: 'SB Admin 2 - Animations' },
           { path: 'other', component: OtherComponent, title: 'SB Admin 2 - Other' },
