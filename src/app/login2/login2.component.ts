@@ -5,10 +5,12 @@ import {
   FormControl,
   FormGroup,
   FormGroupDirective,
+  NgForm,
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { forbiddenPassword } from './forbiddenPassword';
 
 @Component({
   templateUrl: './login2.component.html',
@@ -47,6 +49,7 @@ export class Login2Component implements OnInit {
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(32),
+        forbiddenPassword
       ],
     }),
     isRememberMe: this.fb.control(true, {}),
@@ -54,6 +57,8 @@ export class Login2Component implements OnInit {
       this.makeProfile('Taipei', '0988-888888'),
       this.makeProfile('台中', '0944-444444'),
     ]),
+  }, {
+    validators: []
   });
 
   makeProfile(city: string, tel: string) {

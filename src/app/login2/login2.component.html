@@ -12,46 +12,45 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                 </div>
+
                 <pre>
-                  data = {{ data | json }}
-                  form.value = {{ form.value | json }}
-                  form.valid = {{ form.valid }}
-                  form.invalid = {{ form.invalid }}
-                  form.touched = {{ form.touched }}
-                  form.untouched = {{ form.untouched }}
-                  form.pristine = {{ form.pristine }}
-                  form.dirty = {{ form.dirty }}
-                  form.enabled = {{ form.enabled }}
-                  form.disabled = {{ form.disabled }}
-                  form.status = {{ form.status }}
-                  form.errors = {{ form.errors | json }}</pre
+data = {{ data | json }}
+form.value = {{ form.value | json }}
+form.valid = {{ form.valid }}
+form.invalid = {{ form.invalid }}
+form.touched = {{ form.touched }}
+form.untouched = {{ form.untouched }}
+form.pristine = {{ form.pristine }}
+form.dirty = {{ form.dirty }}
+form.enabled = {{ form.enabled }}
+form.disabled = {{ form.disabled }}
+form.status = {{ form.status }}
+form.errors = {{ form.errors | json }}</pre
                 >
                 <form class="user" [formGroup]="form" (ngSubmit)="doLogin()">
                   <div class="form-group">
                     <input
-                      formControlName="email"
                       type="email"
                       class="form-control form-control-user"
                       id="exampleInputEmail"
                       aria-describedby="emailHelp"
                       placeholder="Enter Email Address..."
+                      formControlName="email"
                     />
+                    <pre>
+fc('email').value = {{ fc("email").value }}
+fc('email').valid = {{ fc("email").valid }}
+fc('email').invalid = {{ fc("email").invalid }}
+fc('email').touched = {{ fc("email").touched }}
+fc('email').untouched = {{ fc("email").untouched }}
+fc('email').pristine = {{ fc("email").pristine }}
+fc('email').dirty = {{ fc("email").dirty }}
+fc('email').enabled = {{ fc("email").enabled }}
+fc('email').disabled = {{ fc("email").disabled }}
+fc('email').status = {{ fc("email").status }}
+fc('email').errors = {{ fc("email").errors | json }}</pre
+                    >
                   </div>
-                  <pre>
-                    data = {{ data | json }}
-                      fc('email').value = {{ fc("email").value }}
-                      fc('email').valid = {{ fc("email").valid }}
-                      fc('email').invalid = {{ fc("email").invalid }}
-                      fc('email').touched = {{ fc("email").touched }}
-                      fc('email').untouched = {{ fc("email").untouched }}
-                      fc('email').pristine = {{ fc("email").pristine }}
-                      fc('email').dirty = {{ fc("email").dirty }}
-                      fc('email').enabled = {{ fc("email").enabled }}
-                      fc('email').disabled = {{ fc("email").disabled }}
-                      fc('email').status = {{ fc("email").status }}
-                      fc('email').errors = {{ fc("email").errors | json }}
-                    </pre
-                  >
                   <div class="form-group">
                     <input
                       type="password"
@@ -60,6 +59,9 @@
                       placeholder="Password"
                       formControlName="password"
                     />
+                    <pre>
+fc('password').errors = {{ fc("password").errors | json }}</pre
+                    >
                   </div>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox small">
@@ -87,7 +89,8 @@
                       "
                       [formGroupName]="i"
                     >
-                    <h2>{{ i+1 }}</h2>
+                      <h2>{{ i + 1 }}</h2>
+
                       <div class="form-group">
                         <input
                           type="text"
@@ -96,6 +99,7 @@
                           formControlName="city"
                         />
                       </div>
+
                       <div class="form-group">
                         <input
                           type="text"
@@ -123,7 +127,7 @@
                     (click)="resetForm()"
                     class="btn btn-google btn-user btn-block"
                   >
-                    <i class="fab fa-google fa-fw"></i> Rest Form
+                    Reset Form
                   </button>
                   <a
                     href="index.html"
