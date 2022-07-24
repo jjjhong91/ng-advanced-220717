@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canDeactivate: [FormDirtyGuard]
+    // canDeactivate: [FormDirtyGuard]
   },
   {
     path: '',

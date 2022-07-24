@@ -8,6 +8,12 @@ import { FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
+  data: any = {
+    email: 'test@example.com',
+    password: '123',
+    isRememberMe: true
+  }
+
   orig_body_className = document.body.className;
   form!: FormGroup;
 
