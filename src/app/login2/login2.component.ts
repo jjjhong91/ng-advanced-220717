@@ -11,6 +11,7 @@ export class Login2Component implements OnInit, OnDestroy {
   data = {
     email: 'test@example.com',
     password: '1234',
+    // city: 'Taipei',
     isRememberMe: true
   }
 
@@ -33,7 +34,8 @@ export class Login2Component implements OnInit, OnDestroy {
     document.body.className = 'bg-gradient-primary';
 
     setTimeout(() => {
-      this.form.setValue(this.data);
+      // this.form.setValue(this.data);
+      this.form.patchValue(this.data);
     }, 2000);
   }
 
@@ -51,6 +53,10 @@ export class Login2Component implements OnInit, OnDestroy {
 
   fa(name: string) {
     return this.form.get(name) as FormArray;
+  }
+
+  resetForm() {
+    this.form.reset(this.data);
   }
 
   // login(form: NgForm) {
