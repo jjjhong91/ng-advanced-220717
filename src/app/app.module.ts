@@ -11,6 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Login2Component } from './login2/login2.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NotFoundComponent,
     LayoutComponent,
     LoginComponent,
+    Login2Component,
   ],
   imports: [
     BrowserModule,

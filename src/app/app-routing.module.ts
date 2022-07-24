@@ -8,12 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { AuthGuard } from './auth.guard';
+import { Login2Component } from './login2/login2.component';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
     // canDeactivate: [FormDirtyGuard]
+  },
+  {
+    path: 'login2',
+    component: Login2Component,
   },
   {
     path: '',
