@@ -1,6 +1,6 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, NgModel } from '@angular/forms';
 
 @Component({
   templateUrl: './login.component.html',
@@ -9,8 +9,8 @@ import { FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit, OnDestroy {
 
   data: any = {
-    email: 'test@example.com',
-    password: '123',
+    email: null,
+    password: null,
     isRememberMe: true
   }
 
@@ -31,6 +31,14 @@ export class LoginComponent implements OnInit, OnDestroy {
     localStorage.setItem('token', '123');
     var url = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     this.router.navigateByUrl(url);
+  }
+
+  isInVaild(control: NgModel) {
+    return control.invalid && control.touched;
+  }
+
+  isVaild(control: NgModel) {
+    return control.valid;
   }
 
 }

@@ -17,8 +17,8 @@
                     <input
                       type="email"
                       class="form-control form-control-user"
-                      [class.is-invalid]="mEmail.invalid"
-                      [class.is-valid]="mEmail.valid"
+                      [class.is-invalid]="isInVaild(mEmail)"
+                      [class.is-valid]="isVaild(mEmail)"
                       id="exampleInputEmail"
                       aria-describedby="emailHelp"
                       placeholder="Enter Email Address..."
@@ -30,7 +30,7 @@
                     />
                     <p
                       class="invalid-feedback"
-                      *ngIf="mEmail.invalid && mEmail.errors?.['required']"
+                      *ngIf="isInVaild(mEmail) && mEmail.errors?.['required']"
                     >
                       請輸入 Email 地址 (帳號)
                     </p>
@@ -48,13 +48,14 @@
                       mEmail.dirty = {{ mEmail.dirty }}
                       mEmail.enabled = {{ mEmail.enabled }}
                       mEmail.disabled = {{ mEmail.disabled }}
+                      mEmail.status = {{ mEmail.status }}
                       mEmail.errors = {{ mEmail.errors | json }}
                     </pre>
                   </div>
                   <div class="form-group">
                     <input
-                      [class.is-invalid]="mPassword.invalid"
-                      [class.is-valid]="mPassword.valid"
+                      [class.is-invalid]="isInVaild(mPassword)"
+                      [class.is-valid]="isVaild(mPassword)"
                       type="password"
                       class="form-control form-control-user"
                       id="exampleInputPassword"
@@ -66,7 +67,7 @@
                     />
                     <p
                       class="invalid-feedback"
-                      *ngIf="mPassword.invalid && mPassword.errors?.['required']"
+                      *ngIf="isInVaild(mPassword) && mPassword.errors?.['required']"
                     >
                       請輸入密碼
                     </p>
