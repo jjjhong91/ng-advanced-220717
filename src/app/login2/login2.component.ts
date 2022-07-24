@@ -1,3 +1,4 @@
+import { Page1Component } from './../page1/page1.component';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, NgModel, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -29,16 +30,17 @@ export class Login2Component implements OnInit, OnDestroy {
     }),
 
     profiles: this.fb.array([
-      this.fb.group({
-        city: this.fb.control('Taipei', { validators: [Validators.required]}),
-        tel: this.fb.control('0900-000000', { validators: [Validators.required]}),
-      }),
-      this.fb.group({
-        city: this.fb.control('Taichung', { validators: [Validators.required]}),
-        tel: this.fb.control('0900-111111', { validators: [Validators.required]}),
-      }),
+        this.makeProfile('Taipei','0900-000000'),
+        this.makeProfile('Taichung','0900-111111')
     ])
   });
+
+  makeProfile(city: string, tel: string) {
+    return this.fb.group({
+      city: this.fb.control(city, { validators: [Validators.required]}),
+      tel: this.fb.control(tel, { validators: [Validators.required]}),
+    })
+  }
 
   constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder) { }
   ngOnInit(): void {
@@ -68,6 +70,10 @@ export class Login2Component implements OnInit, OnDestroy {
 
   resetForm() {
     this.form.reset(this.data);
+  }
+
+  addProfile() {
+    this.form.controls.profiles.push(this.makeProfile('',''));
   }
 
   // login(form: NgForm) {

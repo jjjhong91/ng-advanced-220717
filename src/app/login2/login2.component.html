@@ -80,14 +80,17 @@
                   <h1>Profiles</h1>
 
                   <ng-container formArrayName="profiles">
-
-                    <ng-container *ngFor="let profile of form.controls.profiles.controls; let i=index" [formGroupName]="i">
-
+                    <ng-container
+                      *ngFor="
+                        let profile of form.controls.profiles.controls;
+                        let i = index
+                      "
+                      [formGroupName]="i"
+                    >
                       <div class="form-group">
                         <input
                           type="text"
                           class="form-control form-control-user"
-                          id="exampleInputPassword"
                           placeholder="請輸入城市"
                           formControlName="city"
                         />
@@ -96,14 +99,16 @@
                         <input
                           type="text"
                           class="form-control form-control-user"
-                          id="exampleInputPassword"
                           placeholder="請輸入電話"
                           formControlName="tel"
                         />
                       </div>
                     </ng-container>
-
                   </ng-container>
+
+                  <button type="button" (click)="addProfile()">
+                    Add Profile
+                  </button>
 
                   <button
                     type="submit"
