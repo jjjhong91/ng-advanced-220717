@@ -27,6 +27,7 @@
                       #mEmail="ngModel"
                       required
                       email
+                      minlength="5"
                     />
                     <p
                       class="invalid-feedback"
@@ -64,6 +65,8 @@
                       name="password"
                       #mPassword="ngModel"
                       required
+                      minlength="6"
+                      maxlength="32"
                     />
                     <p
                       class="invalid-feedback"
